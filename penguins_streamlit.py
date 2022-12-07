@@ -11,6 +11,11 @@ st.title('Penguin Classifier')
 st.write("This app allows you to predict the species of a penguin using our pretrained "
          "model or one trained on your own dataset")
 
+# prompt user to enter password
+password_guess = st.text_input("What is the password?")
+if password_guess != 'streamlit_password':
+    st.stop()
+
 # give the user the option to upload their own data to train a new model but if not use ours as default
 penguin_file = st.file_uploader('Upload your own penguin data')
 
